@@ -14,7 +14,7 @@ analyze_string = "What happened in here? Was it a rat I saw in there?"
 counter = 0
 sentence_dict = {}
 frequent_letters = {}
-max_value = []
+# max_value = []
 
 
 def split(sentence):
