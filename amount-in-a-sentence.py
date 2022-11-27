@@ -13,6 +13,8 @@ import sys
 analyze_string = "Was it a rat I saw in there?"
 counter = 0
 sentence_dict = {}
+frequent_letters = {}
+max_value = []
 
 
 def split(sentence):
@@ -39,7 +41,28 @@ for i in split(analyze_string):
         # print(counter)
         sentence_dict[i] = counter
         counter = 0
-# print(sentence_dict)
+#  print(sentence_dict)
+# max_value = max(sentence_dict, key=sentence_dict.get)
+# max_value = [key for key, value in sentence_dict.items() if value ==
+#              max(sentence_dict.values())]
+
+for key, value in sentence_dict.items():
+    if value == max(sentence_dict.values()):
+        # print("max value")
+        # print("key", key)
+        # print("value", value)
+        frequent_letters[key] = value
+# print(max_value)
+# print(str(frequent_letters.keys()))  # returns list of keys
+joined_frequent_letters = ", ".join(frequent_letters.keys())
+# print(", ".join(frequent_letters.keys()))  # r, n, h
 print(f"The string being analtzed is: {analyze_string}")
-print(f"1. Dictionary of letter counts: ")
-print(f"2. Most frequent letter(s) _ appears _ times")
+print(f"1. Dictionary of letter counts: {sentence_dict}")
+
+# print(len(sentence_dict))
+if len(sentence_dict) == 1:
+    print(
+        f"2. Most frequent letter {joined_frequent_letters} appears {list(frequent_letters.values())[0]} times")
+else:
+    print(
+        f"2. Most frequent letter(s) {joined_frequent_letters} appears {list(frequent_letters.values())[0]} times")
