@@ -31,6 +31,7 @@ def split(sentence):
 for i in split(analyze_string):
     if i in sentence_dict:
         print(i)
+        print(counter)
         # print(i)  # prints each element found that is in a list
         # print(i)
        # print(sentence_dict.get(i))  # returns the counter amount
