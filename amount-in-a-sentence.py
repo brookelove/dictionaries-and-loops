@@ -10,7 +10,7 @@
 import string
 import sys
 
-analyze_string = "Was it a rat I saw in there?"
+analyze_string = "What happened in here? Was it a rat I saw in there?"
 counter = 0
 sentence_dict = {}
 frequent_letters = {}
@@ -30,11 +30,12 @@ def split(sentence):
 
 for i in split(analyze_string):
     if i in sentence_dict:
+        print(i)
         # print(i)  # prints each element found that is in a list
         # print(i)
        # print(sentence_dict.get(i))  # returns the counter amount
        # print(type(sentence_dict.get(i))) # returns int
-        counter = sentence_dict.get(i) + 1
+        counter = sentence_dict.get(i)
         counter += 1
     elif i in string.ascii_letters:
         counter += 1
